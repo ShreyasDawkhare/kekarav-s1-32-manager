@@ -97,6 +97,9 @@ function openTaskDetail(taskId) {
     // Render state history
     renderStateHistory(task.stateHistory || []);
 
+    // Render file attachments
+    renderTaskFiles(taskId);
+
     new bootstrap.Modal(document.getElementById('taskDetailModal')).show();
 }
 

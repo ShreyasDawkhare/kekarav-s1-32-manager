@@ -35,3 +35,11 @@ const STATE_COLORS = {
     'RecycleBin': 'dark'
 };
 
+// App configuration defaults (can be overridden via Admin Config page)
+let appConfig = {
+    maxFileSizeMB: 5,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'application/pdf'],
+    backupRetentionDays: 3,
+    maxBackupFiles: 50
+};
+

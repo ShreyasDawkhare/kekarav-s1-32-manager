@@ -21,6 +21,38 @@ async function loadData() {
         users = DEFAULT_USERS;
         taskIdCounter = 1;
     }
+    // Also load app config
+    await loadAppConfig();
+}
+
+async function loadAppConfig() {
+    try {
+        const response = await fetch(BASE_PATH + '/api/config');
+        const data = await response.json();
+        if (data.success) {
+            appConfig = { ...appConfig, ...data.config };
+        }
+    } catch (err) {
+        console.error('Error loading app config:', err);
+    }
+}
+
+async function saveAppConfig(config) {
+    try {
+        const response = await fetch(BASE_PATH + '/api/config', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(config)
+        });
+        const result = await response.json();
+        if (result.success) {
+            appConfig = { ...appConfig, ...config };
+        }
+        return result;
+    } catch (err) {
+        console.error('Error saving app config:', err);
+        return { success: false, message: 'Error connecting to server.' };
+    }
 }
 
 async function saveData() {

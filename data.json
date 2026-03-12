@@ -221,6 +221,20 @@
       "userName": "Admin",
       "details": "Admin logged in",
       "timestamp": "Mar 12, 2026, 11:49 PM"
+    },
+    {
+      "action": "File Uploaded",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "Uploaded \"Merchant Manager - Order Details - 690d7c28-b83a-4c48-b19a-0f8799637cef.pdf\" to TASK-5",
+      "timestamp": "Mar 13, 2026, 12:12 AM"
+    },
+    {
+      "action": "File Pinned",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "Pinned \"Merchant Manager - Order Details - 690d7c28-b83a-4c48-b19a-0f8799637cef.pdf\" in TASK-5",
+      "timestamp": "Mar 13, 2026, 12:21 AM"
     }
   ]
 }

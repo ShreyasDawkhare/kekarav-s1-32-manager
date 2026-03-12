@@ -1,0 +1,226 @@
+{
+  "tasks": [
+    {
+      "id": 5,
+      "title": "UGWT Discussion with Rahul sir",
+      "description": "Design is shared.",
+      "state": "InProgress",
+      "assigneeId": 6,
+      "deadline": "2026-03-13",
+      "createdAt": "Mar 12, 2026, 07:14 AM",
+      "comments": [
+        {
+          "text": "Check regarding capacity",
+          "authorId": 5,
+          "timestamp": "Mar 12, 2026, 07:14 AM"
+        },
+        {
+          "text": "Align Contractor and Architect on UGWT design",
+          "authorId": 5,
+          "timestamp": "Mar 12, 2026, 07:15 AM"
+        },
+        {
+          "text": "Steel design for UGWT from Saharsh",
+          "authorId": 5,
+          "timestamp": "Mar 12, 2026, 07:15 AM"
+        }
+      ],
+      "stateHistory": [
+        {
+          "fromState": "New",
+          "toState": "InProgress",
+          "actorId": 6,
+          "timestamp": "Mar 12, 2026, 07:15 AM"
+        },
+        {
+          "fromState": "InProgress",
+          "toState": "New",
+          "actorId": 6,
+          "timestamp": "Mar 12, 2026, 09:54 PM"
+        },
+        {
+          "fromState": "New",
+          "toState": "InProgress",
+          "actorId": 6,
+          "timestamp": "Mar 12, 2026, 10:00 PM"
+        },
+        {
+          "fromState": "InProgress",
+          "toState": "Ready",
+          "actorId": 6,
+          "timestamp": "Mar 12, 2026, 11:25 PM"
+        },
+        {
+          "fromState": "Ready",
+          "toState": "InProgress",
+          "actorId": 6,
+          "timestamp": "Mar 12, 2026, 11:29 PM"
+        },
+        {
+          "fromState": "InProgress",
+          "toState": "Ready",
+          "actorId": 6,
+          "timestamp": "Mar 12, 2026, 11:43 PM"
+        },
+        {
+          "fromState": "Ready",
+          "toState": "InProgress",
+          "actorId": 6,
+          "timestamp": "Mar 12, 2026, 11:43 PM"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "Admin",
+      "role": "Admin",
+      "mustResetPassword": false,
+      "password": "$2b$10$CDWRnXSADQwHlWBSy6nxUOWYkMIVTK/7r7/tfSiPArVwv995CqCGu"
+    },
+    {
+      "id": 5,
+      "name": "Shreyas Dawkhare",
+      "role": "Owner",
+      "mustResetPassword": false,
+      "password": "$2b$10$8mOeqf7cPmE3X4fTmohrJ.xr53nVppjh02lZ6NECF5w0PXEzuHOY."
+    },
+    {
+      "id": 6,
+      "name": "Priyanka Tiwari",
+      "role": "Owner",
+      "mustResetPassword": true,
+      "password": "$2b$10$iFvrWWjm0ScKZrt9Gf9w1eKgyi/w0wGUDHzMuqY501VJ7xV9jlBXe"
+    },
+    {
+      "id": 8,
+      "name": "Shantanu Autade",
+      "role": "Architect",
+      "mustResetPassword": true,
+      "password": "$2b$10$JCrw6cp0gV7ugbCA0Cb3g.IA0tkLQDmOmK3quyrhsg676TjTvmcPO"
+    },
+    {
+      "id": 9,
+      "name": "Deepak Shinde",
+      "role": "Contractor",
+      "mustResetPassword": true,
+      "password": "$2b$10$iAwZY/eBnem.6vdNWkamBeMPkriu9eDwjCioe8x/f1zz4WK8ryeU."
+    },
+    {
+      "id": 10,
+      "name": "Vishnu Sonawane",
+      "role": "Contractor",
+      "mustResetPassword": true,
+      "password": "$2b$10$YQoNU1QxGiFITN95zMKCwOsNGG1EpMcvPMg1huyl0qG03Q2kH8j3a"
+    },
+    {
+      "id": 11,
+      "name": "Rahul Dabir",
+      "role": "Architect",
+      "mustResetPassword": true,
+      "password": "$2b$10$oQ.V1IQPlLdE3wfgIlJZmOV28FI.OYQh7S2kSe18ymzVcCiJET/ae"
+    }
+  ],
+  "taskIdCounter": 6,
+  "activityLog": [
+    {
+      "action": "Task Transitioned",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "TASK-5 moved from In Progress to New",
+      "timestamp": "Mar 12, 2026, 09:54 PM"
+    },
+    {
+      "action": "Logout",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "Admin logged out",
+      "timestamp": "Mar 12, 2026, 09:55 PM"
+    },
+    {
+      "action": "Login",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "Admin logged in",
+      "timestamp": "Mar 12, 2026, 09:55 PM"
+    },
+    {
+      "action": "Task Transitioned",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "TASK-5 moved from New to In Progress",
+      "timestamp": "Mar 12, 2026, 10:00 PM"
+    },
+    {
+      "action": "Comment Added",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "Commented on TASK-5: \"Meeting to be held on 13th March 2026 evening 8:00...\"",
+      "timestamp": "Mar 12, 2026, 10:04 PM"
+    },
+    {
+      "action": "Comment Deleted",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "Deleted comment on TASK-5: \"Meeting to be held on 13th March 2026 evening 8:00...\"",
+      "timestamp": "Mar 12, 2026, 10:15 PM"
+    },
+    {
+      "action": "Task Transitioned",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "TASK-5 dragged from In Progress to Ready",
+      "timestamp": "Mar 12, 2026, 11:25 PM"
+    },
+    {
+      "action": "Task Transitioned",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "TASK-5 dragged from Ready to In Progress",
+      "timestamp": "Mar 12, 2026, 11:29 PM"
+    },
+    {
+      "action": "Task Transitioned",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "TASK-5 dragged from In Progress to Ready",
+      "timestamp": "Mar 12, 2026, 11:43 PM"
+    },
+    {
+      "action": "Task Transitioned",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "TASK-5 dragged from Ready to In Progress",
+      "timestamp": "Mar 12, 2026, 11:43 PM"
+    },
+    {
+      "action": "Logout",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "Admin logged out",
+      "timestamp": "Mar 12, 2026, 11:45 PM"
+    },
+    {
+      "action": "Login",
+      "userId": 5,
+      "userName": "Shreyas Dawkhare",
+      "details": "Shreyas Dawkhare logged in",
+      "timestamp": "Mar 12, 2026, 11:45 PM"
+    },
+    {
+      "action": "Logout",
+      "userId": 5,
+      "userName": "Shreyas Dawkhare",
+      "details": "Shreyas Dawkhare logged out",
+      "timestamp": "Mar 12, 2026, 11:49 PM"
+    },
+    {
+      "action": "Login",
+      "userId": 0,
+      "userName": "Admin",
+      "details": "Admin logged in",
+      "timestamp": "Mar 12, 2026, 11:49 PM"
+    }
+  ]
+}
