@@ -4,7 +4,7 @@
       "id": 5,
       "title": "UGWT Discussion with Rahul sir",
       "description": "Design is shared.",
-      "state": "InProgress",
+      "state": "Ready",
       "assigneeId": 6,
       "deadline": "2026-03-13",
       "createdAt": "Mar 12, 2026, 07:14 AM",
@@ -49,12 +49,6 @@
           "toState": "Ready",
           "actorId": 6,
           "timestamp": "Mar 12, 2026, 11:25 PM"
-        },
-        {
-          "fromState": "Ready",
-          "toState": "InProgress",
-          "actorId": 6,
-          "timestamp": "Mar 12, 2026, 11:29 PM"
         }
       ]
     }
@@ -153,20 +147,6 @@
       "userName": "Admin",
       "details": "Deleted comment on TASK-5: \"Meeting to be held on 13th March 2026 evening 8:00...\"",
       "timestamp": "Mar 12, 2026, 10:15 PM"
-    },
-    {
-      "action": "Task Transitioned",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "TASK-5 dragged from In Progress to Ready",
-      "timestamp": "Mar 12, 2026, 11:25 PM"
-    },
-    {
-      "action": "Task Transitioned",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "TASK-5 dragged from Ready to In Progress",
-      "timestamp": "Mar 12, 2026, 11:29 PM"
     }
   ]
 }

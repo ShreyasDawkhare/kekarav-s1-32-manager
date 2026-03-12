@@ -160,13 +160,6 @@
       "userName": "Admin",
       "details": "TASK-5 dragged from In Progress to Ready",
       "timestamp": "Mar 12, 2026, 11:25 PM"
-    },
-    {
-      "action": "Task Transitioned",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "TASK-5 dragged from Ready to In Progress",
-      "timestamp": "Mar 12, 2026, 11:29 PM"
     }
   ]
 }

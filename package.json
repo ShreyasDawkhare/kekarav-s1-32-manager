@@ -1,0 +1,16 @@
+{
+  "name": "kekarav-s1-32-manager",
+  "version": "1.0.0",
+  "description": "A simple Kanban-style task manager for tracking tasks.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3"
+  }
+}

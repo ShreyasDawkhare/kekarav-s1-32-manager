@@ -8,5 +8,5 @@ for /f "tokens=5" %%a in ('netstat -ano ^| findstr :132 ^| findstr LISTENING') d
 )
 echo No server found running on port 132.
 :done
-pause
+if "%~1"=="" if not defined RESTART_MODE pause
 

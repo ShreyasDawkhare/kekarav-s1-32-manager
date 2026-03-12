@@ -9,22 +9,122 @@
     <link rel="stylesheet" href="/kekarav-s132/styles.css">
 </head>
 <body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-overlay">
+        <div class="login-container">
+            <div class="login-header">
+                <i class="bi bi-kanban" style="font-size: 2rem;"></i>
+                <h3 class="mt-2">Kekarav S1-32 Manager</h3>
+                <p class="text-muted">Sign in to continue</p>
+            </div>
+            <div class="login-body">
+                <div class="mb-3">
+                    <label class="form-label">Select User</label>
+                    <select class="form-select" id="loginUserSelect"></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" onkeypress="if(event.key==='Enter') loginUser()">
+                </div>
+                <div id="loginError" class="alert alert-danger d-none" role="alert"></div>
+                <button class="btn btn-primary w-100" onclick="loginUser()">
+                    <i class="bi bi-box-arrow-in-right"></i> Sign In
+                </button>
+                <div class="text-center mt-2">
+                    <small class="text-muted">Default password: <code>welcome123</code> | Admin: <code>admin123</code></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Force Password Reset Modal -->
+    <div class="modal fade" id="forceResetPasswordModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-shield-lock"></i> Password Reset Required</h5>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">You must change your password on first login.</p>
+                    <div class="mb-3">
+                        <label class="form-label">New Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="forceNewPassword" placeholder="Min 4 characters" onkeypress="if(event.key==='Enter') document.getElementById('forceConfirmPassword').focus()">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Confirm New Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="forceConfirmPassword" placeholder="Confirm password" onkeypress="if(event.key==='Enter') forceResetPassword()">
+                    </div>
+                    <div id="forceResetError" class="alert alert-danger d-none" role="alert"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="forceResetPassword()">
+                        <i class="bi bi-check-lg"></i> Set Password
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal (voluntary) -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-key"></i> Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Current Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">New Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="changeNewPassword" placeholder="Min 4 characters">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Confirm New Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="changeConfirmPassword" placeholder="Confirm password" onkeypress="if(event.key==='Enter') changePassword()">
+                    </div>
+                    <div id="changePasswordError" class="alert alert-danger d-none" role="alert"></div>
+                    <div id="changePasswordSuccess" class="alert alert-success d-none" role="alert"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="changePassword()">
+                        <i class="bi bi-check-lg"></i> Change Password
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
         <div class="container-fluid">
             <span class="navbar-brand"><i class="bi bi-kanban"></i> Kekarav S1-32 Manager</span>
             <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-outline-light btn-sm" onclick="openManageUsersModal()">
+                <span class="text-light me-2 small" id="loggedInUserLabel" style="opacity: 0.8;"></span>
+                <button class="btn btn-outline-light btn-sm" onclick="openChangePasswordModal()" title="Change Password">
+                    <i class="bi bi-key"></i>
+                </button>
+                <button class="btn btn-outline-light btn-sm admin-only" onclick="window.open(BASE_PATH + '/activity-log.html', '_blank')" title="Activity Log" style="display:none;">
+                    <i class="bi bi-journal-text"></i> Activity Log
+                </button>
+                <button class="btn btn-outline-light btn-sm admin-only" onclick="openManageUsersModal()" style="display:none;">
                     <i class="bi bi-people"></i> Users
                 </button>
-                <button class="btn btn-outline-light btn-sm" onclick="exportData()">
+                <button class="btn btn-outline-light btn-sm admin-only" onclick="exportData()" style="display:none;">
                     <i class="bi bi-download"></i> Export
                 </button>
-                <label class="btn btn-outline-light btn-sm mb-0">
+                <label class="btn btn-outline-light btn-sm mb-0 admin-only" style="display:none;">
                     <i class="bi bi-upload"></i> Import
                     <input type="file" accept=".json" onchange="importData(event)" style="display: none;">
                 </label>
                 <button class="btn btn-light btn-sm" onclick="openCreateTaskModal()">
                     <i class="bi bi-plus-lg"></i> Create Task
+                </button>
+                <button class="btn btn-outline-light btn-sm" onclick="logoutUser()" title="Logout">
+                    <i class="bi bi-box-arrow-right"></i> Logout
                 </button>
             </div>
         </div>
@@ -49,19 +149,27 @@
                 </div>
             </div>
             <div class="col">
-                <div class="board-column" data-state="Completed">
-                    <div class="board-column-header text-success">
-                        <i class="bi bi-check-circle"></i> Completed <span class="badge bg-success" id="count-Completed">0</span>
+                <div class="board-column" data-state="Ready">
+                    <div class="board-column-header text-info">
+                        <i class="bi bi-check-circle"></i> Ready <span class="badge bg-info" id="count-Ready">0</span>
                     </div>
-                    <div id="column-Completed" class="p-2 drop-zone" data-state="Completed"></div>
+                    <div id="column-Ready" class="p-2 drop-zone" data-state="Ready"></div>
                 </div>
             </div>
             <div class="col">
-                <div class="board-column" data-state="Reviewed">
-                    <div class="board-column-header text-purple">
-                        <i class="bi bi-eye"></i> Reviewed <span class="badge bg-purple" id="count-Reviewed">0</span>
+                <div class="board-column" data-state="Approved">
+                    <div class="board-column-header text-success">
+                        <i class="bi bi-hand-thumbs-up"></i> Approved <span class="badge bg-success" id="count-Approved">0</span>
                     </div>
-                    <div id="column-Reviewed" class="p-2 drop-zone" data-state="Reviewed"></div>
+                    <div id="column-Approved" class="p-2 drop-zone" data-state="Approved"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="board-column" data-state="Declined">
+                    <div class="board-column-header text-danger">
+                        <i class="bi bi-x-circle"></i> Declined <span class="badge bg-danger" id="count-Declined">0</span>
+                    </div>
+                    <div id="column-Declined" class="p-2 drop-zone" data-state="Declined"></div>
                 </div>
             </div>
             <div class="col">
@@ -70,6 +178,14 @@
                         <i class="bi bi-check-all"></i> Done <span class="badge bg-teal" id="count-Done">0</span>
                     </div>
                     <div id="column-Done" class="p-2 drop-zone" data-state="Done"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="board-column" data-state="RecycleBin">
+                    <div class="board-column-header text-dark">
+                        <i class="bi bi-trash"></i> Recycle Bin <span class="badge bg-dark" id="count-RecycleBin">0</span>
+                    </div>
+                    <div id="column-RecycleBin" class="p-2 drop-zone" data-state="RecycleBin"></div>
                 </div>
             </div>
         </div>
