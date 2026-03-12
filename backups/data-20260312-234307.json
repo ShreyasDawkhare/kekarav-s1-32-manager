@@ -186,41 +186,6 @@
       "userName": "Admin",
       "details": "TASK-5 dragged from In Progress to Ready",
       "timestamp": "Mar 12, 2026, 11:43 PM"
-    },
-    {
-      "action": "Task Transitioned",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "TASK-5 dragged from Ready to In Progress",
-      "timestamp": "Mar 12, 2026, 11:43 PM"
-    },
-    {
-      "action": "Logout",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "Admin logged out",
-      "timestamp": "Mar 12, 2026, 11:45 PM"
-    },
-    {
-      "action": "Login",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "Shreyas Dawkhare logged in",
-      "timestamp": "Mar 12, 2026, 11:45 PM"
-    },
-    {
-      "action": "Logout",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "Shreyas Dawkhare logged out",
-      "timestamp": "Mar 12, 2026, 11:49 PM"
-    },
-    {
-      "action": "Login",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "Admin logged in",
-      "timestamp": "Mar 12, 2026, 11:49 PM"
     }
   ]
 }

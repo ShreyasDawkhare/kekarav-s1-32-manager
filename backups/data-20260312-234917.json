@@ -214,13 +214,6 @@
       "userName": "Shreyas Dawkhare",
       "details": "Shreyas Dawkhare logged out",
       "timestamp": "Mar 12, 2026, 11:49 PM"
-    },
-    {
-      "action": "Login",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "Admin logged in",
-      "timestamp": "Mar 12, 2026, 11:49 PM"
     }
   ]
 }
