@@ -1,0 +1,76 @@
+{
+  "tasks": [
+    {
+      "id": 5,
+      "title": "UGWT Discussion with Rahul sir",
+      "description": "Design is shared.",
+      "state": "InProgress",
+      "assigneeId": 6,
+      "deadline": "2026-03-13",
+      "createdAt": "Mar 12, 2026, 07:14 AM",
+      "comments": [
+        {
+          "text": "Check regarding capacity",
+          "authorId": 5,
+          "timestamp": "Mar 12, 2026, 07:14 AM"
+        },
+        {
+          "text": "Align Contractor and Architect on UGWT design",
+          "authorId": 5,
+          "timestamp": "Mar 12, 2026, 07:15 AM"
+        },
+        {
+          "text": "Steel design for UGWT from Saharsh",
+          "authorId": 5,
+          "timestamp": "Mar 12, 2026, 07:15 AM"
+        }
+      ],
+      "stateHistory": [
+        {
+          "fromState": "New",
+          "toState": "InProgress",
+          "actorId": 6,
+          "timestamp": "Mar 12, 2026, 07:15 AM"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "Unknown User",
+      "role": "Unassigned"
+    },
+    {
+      "id": 5,
+      "name": "Shreyas Dawkhare",
+      "role": "Owner"
+    },
+    {
+      "id": 6,
+      "name": "Priyanka Tiwari",
+      "role": "Owner"
+    },
+    {
+      "id": 8,
+      "name": "Shantanu Autade",
+      "role": "Architect"
+    },
+    {
+      "id": 9,
+      "name": "Deepak Shinde",
+      "role": "Contractor"
+    },
+    {
+      "id": 10,
+      "name": "Vishnu Sonawane",
+      "role": "Contractor"
+    },
+    {
+      "id": 11,
+      "name": "Rahul Dabir",
+      "role": "Architect"
+    }
+  ],
+  "taskIdCounter": 6
+}
