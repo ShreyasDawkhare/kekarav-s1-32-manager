@@ -4,7 +4,7 @@
       "id": 5,
       "title": "UGWT Discussion with Rahul sir",
       "description": "Design is shared.",
-      "state": "Done",
+      "state": "InProgress",
       "assigneeId": 6,
       "deadline": "2026-03-13",
       "createdAt": "Mar 12, 2026, 07:14 AM",
@@ -90,24 +90,6 @@
           "toState": "InProgress",
           "actorId": 6,
           "timestamp": "Mar 13, 2026, 10:59 AM"
-        },
-        {
-          "fromState": "InProgress",
-          "toState": "Ready",
-          "actorId": 6,
-          "timestamp": "Mar 13, 2026, 08:05 PM"
-        },
-        {
-          "fromState": "Ready",
-          "toState": "Approved",
-          "actorId": 6,
-          "timestamp": "Mar 13, 2026, 08:05 PM"
-        },
-        {
-          "fromState": "Approved",
-          "toState": "Done",
-          "actorId": 6,
-          "timestamp": "Mar 13, 2026, 08:05 PM"
         }
       ]
     }
@@ -346,90 +328,6 @@
       "userName": "Priyanka Tiwari",
       "details": "TASK-5 deadline set to Mar 13, 2026",
       "timestamp": "Mar 13, 2026, 10:59 AM"
-    },
-    {
-      "action": "Logout",
-      "userId": 6,
-      "userName": "Priyanka Tiwari",
-      "details": "Priyanka Tiwari logged out",
-      "timestamp": "Mar 13, 2026, 11:00 AM"
-    },
-    {
-      "action": "Login",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "Admin logged in",
-      "timestamp": "Mar 13, 2026, 11:00 AM"
-    },
-    {
-      "action": "Login",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "Admin logged in",
-      "timestamp": "Mar 13, 2026, 08:01 PM"
-    },
-    {
-      "action": "Logout",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "Admin logged out",
-      "timestamp": "Mar 13, 2026, 08:02 PM"
-    },
-    {
-      "action": "Login",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "Shreyas Dawkhare logged in",
-      "timestamp": "Mar 13, 2026, 08:02 PM"
-    },
-    {
-      "action": "Logout",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "Shreyas Dawkhare logged out",
-      "timestamp": "Mar 13, 2026, 08:03 PM"
-    },
-    {
-      "action": "Login",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "Shreyas Dawkhare logged in",
-      "timestamp": "Mar 13, 2026, 08:04 PM"
-    },
-    {
-      "action": "Task Transitioned",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "TASK-5 dragged from In Progress to Ready",
-      "timestamp": "Mar 13, 2026, 08:05 PM"
-    },
-    {
-      "action": "Task Transitioned",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "TASK-5 dragged from Ready to Approved",
-      "timestamp": "Mar 13, 2026, 08:05 PM"
-    },
-    {
-      "action": "Task Transitioned",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "TASK-5 dragged from Approved to Done",
-      "timestamp": "Mar 13, 2026, 08:05 PM"
-    },
-    {
-      "action": "Logout",
-      "userId": 5,
-      "userName": "Shreyas Dawkhare",
-      "details": "Shreyas Dawkhare logged out",
-      "timestamp": "Mar 13, 2026, 08:05 PM"
-    },
-    {
-      "action": "Login",
-      "userId": 0,
-      "userName": "Admin",
-      "details": "Admin logged in",
-      "timestamp": "Mar 13, 2026, 08:05 PM"
     }
   ]
 }
