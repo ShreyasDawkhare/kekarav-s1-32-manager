@@ -21,7 +21,8 @@ This guide walks you through hosting the Kekarav S1-32 Manager on Firebase, usin
 8. [Firebase Directory Structure](#8-firebase-directory-structure)
 9. [Updating the App](#9-updating-the-app)
 10. [Cost & Free Tier](#10-cost--free-tier)
-11. [Troubleshooting](#11-troubleshooting)
+11. [Run Locally (Emulators)](#11-run-locally-emulators)
+12. [Troubleshooting](#12-troubleshooting)
 
 ---
 
@@ -343,7 +344,129 @@ To monitor usage:
 
 ---
 
-## 11. Troubleshooting
+## 11. Run Locally (Emulators)
+
+You can run the entire Firebase app on your machine using the **Firebase Emulator Suite** — no deployment needed, no cloud costs, full offline support.
+
+### Prerequisites
+
+- Firebase CLI installed (`npm install -g firebase-tools`)
+- Java JDK 11+ installed (required by Firestore & Storage emulators) — [Download](https://adoptium.net/)
+
+### Step-by-step
+
+**1. Open a terminal and navigate to the `firebase/` directory:**
+
+```bash
+cd C:\Projects\personal\kekarav-s1-32-manager\firebase
+```
+
+**2. Install function dependencies (first time only):**
+
+```bash
+cd functions
+npm install
+cd ..
+```
+
+**3. Start all emulators:**
+
+```bash
+firebase emulators:start
+```
+
+**4. You'll see output like this:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+│ Firestore │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+│ Hosting   │ 127.0.0.1:5000 │ n/a                             │
+│ Storage   │ 127.0.0.1:9199 │ http://127.0.0.1:4000/storage   │
+└───────────┴────────────────┴─────────────────────────────────┘
+```
+
+**5. Open the app in your browser:**
+
+```
+http://localhost:5000/kekarav-s132/
+```
+
+**6. (Optional) Open the Emulator UI to inspect data:**
+
+```
+http://localhost:4000/
+```
+
+From here you can:
+- Browse Firestore documents (tasks, users, config)
+- View Cloud Storage files (uploads, backups)
+- Check Cloud Function logs
+- Clear all emulator data
+
+### Emulator Ports
+
+| Service    | Port  | URL                                  |
+|------------|-------|--------------------------------------|
+| **App**    | 5000  | http://localhost:5000/kekarav-s132/   |
+| Emulator UI| 4000  | http://localhost:4000/                |
+| Functions  | 5001  | (used internally by Hosting rewrite) |
+| Firestore  | 8080  | (used internally by Functions)       |
+| Storage    | 9199  | (used internally by Functions)       |
+
+### Important Notes
+
+- **Data is temporary** — emulator data is lost when you stop the emulators. To persist data between runs:
+  ```bash
+  firebase emulators:start --export-on-exit=./emulator-data --import=./emulator-data
+  ```
+  This saves/loads data from a local `emulator-data/` folder.
+
+- **No Google account needed** — emulators run fully offline.
+
+- **No Blaze plan needed** — emulators are 100% free.
+
+- **Hot reload for frontend** — edit files in `public/kekarav-s132/` and refresh the browser. No restart needed.
+
+- **Function changes need restart** — if you edit `functions/index.js`, stop emulators (`Ctrl+C`) and restart them.
+
+### Quick Commands
+
+```bash
+# Start emulators
+cd firebase
+firebase emulators:start
+
+# Start with data persistence
+firebase emulators:start --export-on-exit=./emulator-data --import=./emulator-data
+
+# Stop emulators
+Ctrl+C
+```
+
+### Alternative: Run the Original Local Server
+
+Your original `server.js` still works for pure local development (without Firebase):
+
+```bash
+cd C:\Projects\personal\kekarav-s1-32-manager
+npm start
+```
+
+Then open: http://localhost:132/kekarav-s132
+
+This uses local `data.json`, `uploads/`, and `backups/` — no Firebase at all.
+
+---
+
+## 12. Troubleshooting
 
 ### "Error: Cloud Functions require the Blaze plan"
 
@@ -383,14 +506,6 @@ firebase functions:log
 
 Or view logs in the Firebase Console → **Functions → Logs**
 
-### Running locally for development
-
-```bash
-cd firebase
-firebase emulators:start
-```
-
-This starts local emulators for Hosting, Functions, Firestore, and Storage. Open: `http://localhost:5000/kekarav-s132/`
 
 ### Reverting to local mode
 
